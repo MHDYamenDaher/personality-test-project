@@ -3,3 +3,9 @@
 
 // Base stuff
 @import 'base/fonts';
+
+// Components
+@import 'components/answerContainer';
+
+// Page-specific styles parsing it at the end to override vendors
+@import 'pages/test';

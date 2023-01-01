@@ -1,21 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './assets/styles/main.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { BASE_ROUTE } from './utilities/constants';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./assets/styles/main.scss";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { QueryClientProvider } from 'react-query';
+import getQuery from './utilities/query';
+import { BASE_ROUTE } from "./utilities/constants";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Router basename={BASE_ROUTE}>
+    <QueryClientProvider client={getQuery()}>
+      <Router basename={BASE_ROUTE}>
         <Routes>
           <Route path="*" element={<App />} />
         </Routes>
       </Router>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

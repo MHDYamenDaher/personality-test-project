@@ -6,6 +6,7 @@ import en from './locales/en/default.json';
 i18n
   .use(initReactI18next)
   .init({
+    returnNull: false,
     debug: true,
     resources: {
       en: { translation: en },
@@ -17,3 +18,4 @@ i18n
   });
 
 export default i18n;
+
