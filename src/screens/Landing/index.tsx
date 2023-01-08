@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { Button } from '../../components/Button';
 import MainLayout from '../../shared/layouts/MainLayout';
 
 
@@ -59,9 +60,9 @@ const Landing: FC = () => {
                     </div>
                 </div>
                 <div className='grid grid-row-auto justify-center text-blue-500 text-3xl font-bold mt-10'>
-                    <Link to='/test' className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-100 hover:bg-red-50">
-                        {translate('start_the_test_btn_label')}
-                    </Link>
+                    <Button variant='secondary' className='inline-flex items-center justify-center'>
+                        <Link to='/test'>{translate('start_the_test_btn_label')}</Link> 
+                    </Button>
                 </div>
             </div>
         </MainLayout>
